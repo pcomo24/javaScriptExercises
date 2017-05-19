@@ -82,5 +82,146 @@ function printNumbers(start, end) {
 printNumbers(4, 14)
 //Print as Square
 function printSquare(size) {
-  
+  let i = 0
+  while (i < size) {
+    console.log("*".repeat(size))
+    i += 1;
+  }
+}
+printSquare(3);
+//print a box
+function printBox(width, height) {
+  console.log("*".repeat(width))
+  var i = 0;
+  while (i < height - 2) {
+    console.log("*" + (" ".repeat(width-2) + "*"))
+    i +=1;
+  }
+  console.log("*".repeat(width))
+}
+printBox(5, 7)
+//print a banner
+function printBanner(banner) {
+  var textL = banner.length;
+  console.log("*" + "*".repeat(textL) + "*")
+  console.log("*" + banner + "*")
+  console.log("*" + "*".repeat(textL) + "*")
+}
+printBanner('Welcome to DigitalCrafts');
+//factor a number
+function factors(theNum) {
+  var theFactors = []
+  for (var i = 0; i < theNum; i++) {
+    if (theNum % i == 0) {
+      theFactors.push(i);
+    }
+  }
+  console.log(theFactors)
+}
+factors(24);
+//Caesar Cipher
+function cipher(codes, offset) {
+  var alphabet = []
+  var coded = ''
+  for (i = 65; i < 90; i++) {
+    alphabet.push(String.fromCharCode(i))
+  }
+//caesar cipher 2
+//LeetSpeak
+function leetspeak(str) {
+  var newString = ''
+  for (var i = 0; i < str.length; i++) {
+    if (str.charAt([i]) == 'A') {
+      newString += 4;
+    } else if (str.charAt([i]) == 'E') {
+      newString+= 3;
+    } else if (str.charAt([i]) == 'G') {
+      newString+= 6;
+    } else if (str.charAt([i]) == 'I') {
+      newString+= 1;
+    } else if (str.charAt([i]) == 'O') {
+      newString+= 0;
+    } else if (str.charAt([i]) == 'S') {
+      newString+= 5;
+    } else if (str.charAt([i]) == 'T') {
+      newString+= 7;
+    } else {
+      newString += str.charAt([i]);
+    }
+  }
+  console.log(newString)
+}
+//long-long Vowels
+function vowels(str) {
+  var newString = ''
+  for (var i = 0; i < str.length; i++) {
+    if (str.charAt([i]) == 'o') {
+      newString += 'o'.repeat(5);
+    } else if (str.charAt([i]) == 'e') {
+      newString += 'e'.repeat(5);
+    } else {
+      newString += str.charAt([i]);
+    }
+  } console.log(newString)
+}
+//sum the Numbers
+function sumNumber(theArray) {
+  var a = 0;
+  for (var i = 0; i < theArray.length; i++) {
+    a += theArray[i]
+  }
+  console.log(a)
+}
+sumNumber([4, 5, 2])
+//Just the positives
+function positiveNumbers(theArray) {
+  var positives = [];
+  for (var i = 0; i < theArray.length; i++) {
+    if (theArray[i] > 0) {
+      positives.push(theArray[i]);
+    }
+  } console.log(positives);
+}
+positiveNumbers([4,-3,5,-2,0,1])
+//Matrix Addition
+function matrixAdd(max1, max2) {
+  maxSum = [[],[]];
+  maxSum[0][0] = (max1[0][0] + max2[0][0]);
+  maxSum[0][1] = (max1[0][1] + max2[0][1]);
+  maxSum[1][0] = (max1[1][0] + max2[1][0]);
+  maxSum[1][1] = (max1[1][1] + max2[1][1]);
+  console.log(maxSum);
+}
+
+matrixAdd([[1,3],[2,4]],[[5,2],[1,0]])
+//Matrix Multiplication
+//Rock Paper Scissors
+function rockPaperScissors(throw1, throw2) {
+  if ((throw1 == 'rock' && throw2 == 'scissors') || (throw1 == 'scissors' && throw2
+    == 'paper') || (throw1 == 'paper' && throw2 == 'rock')) {
+    console.log('player1 wins!')
+  } else if (throw1 == throw2) {
+    console.log('draw!')
+  } else {
+    console.log('player2 wins!')
+  }
+}
+//Tic Tac Toe
+function ticTacToe(max) {
+  var o = 'O'
+  var x = 'X'
+  if ((max[0][0] == o && max[0][1] == o && max[0][2] == o) || (max[0][0]
+    == o && max[1][0] == o && max[2][0] == o) || (max[0][0] == o &&
+    max[1][1] == o && max[2][2] == o) || (max[0][2] == o && max[1][1] == o &&
+    max[2][0] == o)) {
+      console.log(o)
+  } else if
+    ((max[0][0] == x && max[0][1] == x && max[0][2] == x) || (max[0][0]
+      == x && max[1][0] == x && max[2][0] == x) || (max[0][0] == x &&
+      max[1][1] == x && max[2][2] == x) || (max[0][2] == x && max[1][1] == x &&
+      max[2][0] == x)) {
+        console.log(x)
+  } else {
+    console.log('null')
+  }
 }
