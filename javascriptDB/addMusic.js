@@ -12,19 +12,24 @@ prompt('Album Name: ')
     albumStuff = {name: alName};
     console.log(alName);
     console.log(albumStuff);
+
+    var query = 'INSERT INTO album VALUES (default, ${name})';
+    return db.result(query, albumStuff);
+
   })
-var query = "INSERT INTO album VALUES (default, ${name})";
-console.log(query);
-db.result(query, name)
   .then(function (result) {
-    console.log(result)
-  })
+    console.log(result);
+    })
   .catch(function (error) {
     console.error(error);
   })
   .finally(function () {
     pgp.end();
   });
+
+
+//console.log(query);
+
 
 //  db.query('SELECT * FROM album')
 //  .then(function (results) {
