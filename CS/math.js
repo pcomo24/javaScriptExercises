@@ -28,3 +28,19 @@ function power (x, y) {
 };
 
 power(2,3);
+
+//find the duplicate number in array
+var arr1 = [10, 1, 3, 4, 8, 5, 7, 6, 9, 5, 2, 9, 9];
+var arr2 = [];
+var dup = [];
+function checkXtra() {
+  for (var i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      dup.push(arr1[i]);
+    } else {
+      arr2.push(arr1[i]);
+    };
+  };
+};
+
+checkXtra();
